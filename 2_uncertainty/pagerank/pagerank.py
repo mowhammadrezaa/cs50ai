@@ -137,8 +137,9 @@ def iterate_pagerank(corpus, damping_factor):
 def iterative_sum(corpus, distribution, page):
     s = 0
     
-    for page in distribution:
-        s += distribution[page] / len(corpus[page])
+    for pg in corpus:
+        if page in corpus[pg]:
+            s += distribution[pg] / len(corpus[pg]
 
     return s
 
